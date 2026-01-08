@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Directorio de aplicaciones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-[#f6f8ff] text-slate-800">
+  <!-- Fondo suave -->
+  <div class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute -top-24 -left-24 h-[420px] w-[420px] rounded-full bg-blue-200/60 blur-3xl"></div>
+    <div class="absolute -bottom-40 -right-40 h-[520px] w-[520px] rounded-full bg-indigo-200/70 blur-3xl"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-white/20 to-white/60"></div>
+  </div>
+
+  <!-- JSON "source of truth" -->
+  <script id="appData" type="application/json">
+  {
+    "brand": {
+      "name": "AAPP",
+      "ctaText": "Buscar"
+    },
+    "hero": {
+      "kicker": "CLIENTES",
+      "title": "Cientos de clientes nos respaldan",
+      "subtitle": "Explore perfiles verificados y descubra profesionales capacitados en diversas industrias."
+    },
+    "filters": {
+      "search": { "placeholder": "Buscar por nombre, palabra clave" },
+      "rubro": {
+        "label": "Rubro",
+        "placeholder": "Seleccionar rubro",
+        "options": [
+          { "value": "all", "label": "Todos los rubros" },
+          { "value": "Gastronomía", "label": "Gastronomía" },
+          { "value": "Indumentaria", "label": "Indumentaria" },
+          { "value": "Belleza", "label": "Belleza" },
+          { "value": "Salud", "label": "Salud" },
+          { "value": "Educación", "label": "Educación" },
+          { "value": "Servicios Profesionales", "label": "Servicios Profesionales" },
+          { "value": "Tecnología", "label": "Tecnología" },
+          { "value": "Hogar y Deco", "label": "Hogar y Deco" },
+          { "value": "Logística", "label": "Logística" },
+          { "value": "Arte y Diseño", "label": "Arte y Diseño" },
+          { "value": "Comercio", "label": "Comercio" }
+        ]
+      },
+      "category": {
+        "options": [
+          { "value": "all", "label": "Todo" },
+          { "value": "Sitio Web", "label": "Sitios Web" },
+          { "value": "Tienda WhatsApp", "label": "Tiendas WhatsApp" }
+        ]
+      }
+    },
+    "cards": [
+      {
+        "id": 10,
+        "card_id": "67c555d7076dd",
+        "name": "Judith Zaracho",
+        "subtitle": "Marketing publicidad y Herramientas Digitales",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "colito33.uno",
+        "slug": "colito33",
+        "rubro": "Tecnología",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/ttTFJcvORDCvScRgTkgC.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/NRJQvJJvq5zfgI2o2uLq.png",
+        "avatarLetter": "J"
+      },
+      {
+        "id": 15,
+        "card_id": "67c7a75448851",
+        "name": "MARIMBETA GROW SHOP",
+        "subtitle": "Av. Luro 3480, Laferrere, Buenos Aires, Argentina",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "marimbeta.uno",
+        "slug": "marimbeta-grow-shop1",
+        "rubro": "Comercio",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/qLyC1QdkonKMSrWCCQF3.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/4duwdK6CMqerbhBLa8Ri.png",
+        "avatarLetter": "M"
+      },
+      {
+        "id": 16,
+        "card_id": "67c8617a36cb0",
+        "name": "Soledad Gatti",
+        "subtitle": "@Mysticadivina",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "mysticadivina.uno",
+        "slug": "mysticadivina",
+        "rubro": "Salud",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/KnJqfPUqDnDzMoTRDnBU.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/S8AiBjWw2vPtnsrX6wMy.png",
+        "avatarLetter": "S"
+      },
+      {
+        "id": 24,
+        "card_id": "67ccafab50097",
+        "name": "Centro de Estetica",
+        "subtitle": "Estamos en Los Reartes",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "bodydharma.uno",
+        "slug": "bodydharma",
+        "rubro": "Belleza",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/GTacm3NPEw2HCcuRrirQ.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/XtqPp7KTsZvcQ7SpO1J6.png",
+        "avatarLetter": "C"
+      },
+      {
+        "id": 40,
+        "card_id": "67d51424ca594",
+        "name": "Divino Encanto",
+        "subtitle": "By Nails",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "divinoencantonails.com",
+        "slug": "divinoencanto",
+        "rubro": "Belleza",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/b4i33hIKw4AoAFsnsXo0.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/EsA3fZ6KBKi0MxIjLnWe.png",
+        "avatarLetter": "D"
+      },
+      {
+        "id": 45,
+        "card_id": "67d8ed058fd75",
+        "name": "Potencia Tu Marca con un QR Único",
+        "subtitle": "Creamos tu Códigos QR Personalizado y Atrae Más Clientes",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "miqr.uno",
+        "slug": "miqr",
+        "rubro": "Tecnología",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/glXOBF7CyaJNESUxsApQ.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/7mBjbERCDUGb5pd1d5nq.png",
+        "avatarLetter": "P"
+      },
+      {
+        "id": 49,
+        "card_id": "67da4face7176",
+        "name": "Potencia Tu Marca con una Mini App",
+        "subtitle": "Creamos tu Códigos QR Personalizado y Atrae Más Clientes",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "miapp.uno",
+        "slug": "miapp",
+        "rubro": "Tecnología",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/t4gJzCkj4loo0UkSiFwM.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/RG4yqhzDsQ0ZkJZaCMZY.png",
+        "avatarLetter": "P"
+      },
+      {
+        "id": 53,
+        "card_id": "67dd15622b574",
+        "name": "La Parrilla de Portic",
+        "subtitle": "Pollo a las brasas, lomitos, pizzas y hamburguesas",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "laparrilladeportic.uno",
+        "slug": "laparrilladeportic",
+        "rubro": "Gastronomía",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/Wev7jnFE4qyBqC4oFPWF.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/NObE3DPE7d6o1MMMDtTD.png",
+        "avatarLetter": "L"
+      },
+      {
+        "id": 80,
+        "card_id": "67f5f19281e60",
+        "name": "José Delgado",
+        "subtitle": "Marketing publicidad y Herramientas Digitales",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "colito33.uno",
+        "slug": "josedelgado",
+        "rubro": "Tecnología",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/aL589q7FMH26o0RlVjib.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/ib48HdxQl4i6AsPkXoyq.png",
+        "avatarLetter": "J"
+      },
+      {
+        "id": 81,
+        "card_id": "67f6051daadb1",
+        "name": "Mi App",
+        "subtitle": "Herramientas Digitales + Marketing + Publicidad",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "colito33.uno",
+        "slug": "miappuno",
+        "rubro": "Tecnología",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/wKAMLXO6cAawuCwmgIv7.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/YaByhNyEHAGA6YnFp336.png",
+        "avatarLetter": "M"
+      },
+      {
+        "id": 86,
+        "card_id": "67fd5c75f1dea",
+        "name": "Parrilla",
+        "subtitle": "Pollo a las brasas, lomitos, pizzas y hamburguesas",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "laparrilladeportic.uno",
+        "slug": "parrilla",
+        "rubro": "Gastronomía",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/Wev7jnFE4qyBqC4oFPWF.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/NObE3DPE7d6o1MMMDtTD.png",
+        "avatarLetter": "P"
+      },
+      {
+        "id": 87,
+        "card_id": "67fdd390b1831",
+        "name": "MINI APP",
+        "subtitle": "TU PROPIA APP HOY",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "Miniapp.uno",
+        "slug": "mini-app",
+        "rubro": "Tecnología",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/cG6BvOwvYLQ",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/QC6Ohv5EgORyfsZ35k7J.png",
+        "avatarLetter": "M"
+      },
+      {
+        "id": 88,
+        "card_id": "67fe6e668f6e3",
+        "name": "HERNIA DISCOS",
+        "subtitle": "Productor de música - Manager musical - Agencia de booking musical",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "herniadiscos.uno",
+        "slug": "hernia-discos",
+        "rubro": "Arte y Diseño",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/CcdvLEwAqdk",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/cwXxftbliNSXyrqyV78b.png",
+        "avatarLetter": "H"
+      },
+      {
+        "id": 91,
+        "card_id": "680aa790b7e67",
+        "name": "Entrega Trabajo La Parrilla de Portic",
+        "subtitle": "Trabajo Solicitado",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "colito33.uno",
+        "slug": "entregalaparrilladeporticimprimibles",
+        "rubro": "Servicios Profesionales",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/DAKGYP0yzcnFZ6ZCSyVT.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/WPh2gXaw8xdG6EnjE1oa.png",
+        "avatarLetter": "E"
+      },
+      {
+        "id": 111,
+        "card_id": "6822e68acd8b2",
+        "name": "Guaraní Express Market",
+        "subtitle": "Recargas - Ventas tarjetas SIM - Productos Latinos",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "guaraniexpress.uno",
+        "slug": "guaraniexpressuno",
+        "rubro": "Comercio",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/mQOnHq60LZAx0WApUNab.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/aDtkcjfDVIOMiBcb5CfH.png",
+        "avatarLetter": "G"
+      },
+      {
+        "id": 134,
+        "card_id": "683f2f9905d33",
+        "name": "Cursos Premium",
+        "subtitle": "Los Mejores Cursos Premium",
+        "type": "Tienda WhatsApp",
+        "cardType": "store",
+        "domain": "cursospremium.uno",
+        "slug": "cursospremium",
+        "rubro": "Educación",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/store/images/pjpobss4X1hxdoJNXe9S.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/GS0GYhqZUgBH7WgvEMpT.png",
+        "avatarLetter": "C"
+      },
+      {
+        "id": 138,
+        "card_id": "6858ed35189ed",
+        "name": "miwebuno",
+        "subtitle": "Mi Web",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "miweb.uno",
+        "slug": "miwebuno",
+        "rubro": "Tecnología",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/FCBrVJ5wp3m4DE1IhtK2.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/7WB2V5O3EeXQVkptTgFc.png",
+        "avatarLetter": "M"
+      },
+      {
+        "id": 152,
+        "card_id": "68649f7fbf51d",
+        "name": "Confort Sur",
+        "subtitle": "Sabanas, Acolchados, Toallas",
+        "type": "Tienda WhatsApp",
+        "cardType": "store",
+        "domain": "confortsur.uno",
+        "slug": "confortsur",
+        "rubro": "Hogar y Deco",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/store/images/cX6ywADsg0RW2qntSTVG.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/wj9NBuHZszUS08dq6lmx.png",
+        "avatarLetter": "C"
+      },
+      {
+        "id": 163,
+        "card_id": "6867f30c3cc2e",
+        "name": "Enchula mi ropero",
+        "subtitle": "Bienvenidos a la tienda Enchula mi Ropero dónde vas a encontrar prendas con estilo y asombrosas",
+        "type": "Tienda WhatsApp",
+        "cardType": "store",
+        "domain": "enchulamiropero.uno",
+        "slug": "enchulamiropero",
+        "rubro": "Indumentaria",
+        "coverType": "image",
+        "coverUrl": "https://miweb.uno/storage/store/images/AwIYpE6NGHArNBI1mRmz.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/5mjjqlME3gVfKDdfPCde.png",
+        "avatarLetter": "E"
+      },
+      {
+        "id": 187,
+        "card_id": "686ea69434f52",
+        "name": "Fers Indumentaria",
+        "subtitle": "Bienvenidos a Fers Indumentaria!! la tienda on line donde encontrarás prendas de calidad a precios increibles. Compra fácil y segura desde la comodidad de tu hogar. ¡Tú satisfacción es nuestra prioridad!",
+        "type": "Tienda WhatsApp",
+        "cardType": "store",
+        "domain": "fersindumentaria.uno",
+        "slug": "fersindumentaria",
+        "rubro": "Indumentaria",
+        "coverType": "image",
+        "coverUrl": "https://miweb.uno/storage/store/images/UT3S6tsVzkCHhH8kaZDB.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/ScA2GzqGqAYvTkCigS30.png",
+        "avatarLetter": "F"
+      },
+      {
+        "id": 200,
+        "card_id": "6872967f37a69",
+        "name": "Vblas",
+        "subtitle": "¡Hola! Bienvenidos a v Blas indumentaria Contanos qué estás buscando",
+        "type": "Tienda WhatsApp",
+        "cardType": "store",
+        "domain": "creacionesvblas.uno",
+        "slug": "vblas",
+        "rubro": "Indumentaria",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/store/images/cAAWcL9A40RRwAVJ7qvd.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/yX2y6QiQ3G5hiLIG6A9Q.png",
+        "avatarLetter": "V"
+      },
+      {
+        "id": 228,
+        "card_id": "68802e46ade2c",
+        "name": "Vik",
+        "subtitle": "Venta de Essen y Tupperwere",
+        "type": "Tienda WhatsApp",
+        "cardType": "store",
+        "domain": "vikitaenlacocina.uno",
+        "slug": "vik",
+        "rubro": "Hogar y Deco",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/store/images/ZfiqGHg8tbiDrQrfPdmM.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/uoDXFw2CBcWmO0BNM9y6.png",
+        "avatarLetter": "V"
+      },
+      {
+        "id": 249,
+        "card_id": "6894cc32c6afb",
+        "name": "Estudio Jurídico Dr Olmos  & Asociados",
+        "subtitle": "Asesoría  Online y Presencial",
+        "type": "Sitio Web",
+        "cardType": "vcard",
+        "domain": "drolmosyasociados.uno",
+        "slug": "estudiojuridicodrolmosyasociados",
+        "rubro": "Servicios Profesionales",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/profile-images/BdmkG8V51MsLfuJ7DzH1.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/fQtqPBMEBpgYrmZEoi5T.png",
+        "avatarLetter": "E"
+      },
+      {
+        "id": 292,
+        "card_id": "6941f5291ec38",
+        "name": "Silimport_moda",
+        "subtitle": "Bienvenidos a la Tienda Online Silimport_moda",
+        "type": "Tienda WhatsApp",
+        "cardType": "store",
+        "domain": "silimportmoda.uno",
+        "slug": "silimportmoda",
+        "rubro": "Indumentaria",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/store/images/2ZTbSNH0197FXbe3kLyn.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/vWjXJ5ynPzvxEGDZ4dgt.png",
+        "avatarLetter": "S"
+      },
+      {
+        "id": 311,
+        "card_id": "6955566f0a1f8",
+        "name": "Vanguardia Boutiquee",
+        "subtitle": "Bienvenidos a Vanguardia Boutiquee",
+        "type": "Tienda WhatsApp",
+        "cardType": "store",
+        "domain": "vanguardia.uno",
+        "slug": "vanguardia",
+        "rubro": "Indumentaria",
+        "coverType": "image",
+        "coverUrl": "https://aapp.space/storage/store/images/nJrgtzJI8QdxPiJ0ttb7.png",
+        "avatarType": "image",
+        "avatarUrl": "https://aapp.space/storage/profile-images/CoL45Cut6YzDOG66SSPR.png",
+        "avatarLetter": "V"
+      }
+    ],
+    "pagination": {
+      "prev": "Anterior",
+      "next": "Próximo",
+      "pages": [1, 2],
+      "current": 1
+    }
+  }
+  </script>
+
+  <!-- App -->
+  <div id="app">
+    <!-- Header (sin barra de menú/nav) -->
+    <header class="pt-4">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="rounded-full bg-white/90 shadow-lg shadow-slate-200/70 ring-1 ring-slate-200/60 backdrop-blur">
+          <div class="flex items-center justify-between px-5 py-3">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+              <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#1d4ed8] text-white">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="opacity-95">
+                  <path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="2" />
+                  <path d="M4 9V5a1 1 0 0 1 1-1h4" stroke="currentColor" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="font-semibold tracking-tight" data-bind="brand.name">GoBiz</div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-2">
+              <button class="hidden rounded-full p-2 text-slate-500 hover:bg-slate-100 md:inline-flex" aria-label="Idioma">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 5h7M7.5 5v2.5M11 12H4m3.5-4.5c.7 1.8 2.1 3.8 4.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M13 19l4-14 4 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M14.5 14h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+
+              <button class="hidden rounded-full p-2 text-slate-500 hover:bg-slate-100 md:inline-flex" aria-label="Tema">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+
+              <span class="hidden h-6 w-px bg-slate-200 md:inline-block"></span>
+
+              <a href="#" class="hidden rounded-full px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100 md:inline-flex">
+                Iniciar sesión
+              </a>
+              <a href="#" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-slate-800">
+                Inscribirse
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="pt-14">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <div class="text-xs font-semibold tracking-[0.18em] text-blue-600" data-bind="hero.kicker">DIRECTORIO</div>
+          <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl" data-bind="hero.title">
+            Explora nuestro directorio profesional
+          </h1>
+          <p class="mx-auto mt-3 max-w-2xl text-base text-slate-500 md:text-lg" data-bind="hero.subtitle">
+            Explore perfiles verificados y descubra profesionales capacitados en diversas industrias.
+          </p>
+        </div>
+
+        <!-- Search bar -->
+        <div class="mt-10 rounded-2xl bg-white/90 shadow-lg shadow-slate-200/70 ring-1 ring-slate-200/60 backdrop-blur">
+          <div class="grid gap-3 p-4 md:grid-cols-[1.4fr_1fr_1fr_auto] md:items-center">
+            <!-- Search -->
+            <div class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-slate-400">
+                <path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M10.5 18a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <input
+                id="qInput"
+                class="w-full bg-transparent text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none"
+                placeholder="Search by name, keyword..."
+                data-bind-placeholder="filters.search.placeholder"
+              />
+            </div>
+
+            <!-- Rubro -->
+            <div class="relative">
+              <select
+                id="rubroSelect"
+                class="w-full appearance-none rounded-xl border border-slate-200 bg-white px-4 py-3 pr-10 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-200"
+              ></select>
+              <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <!-- Tipo -->
+            <div class="relative">
+              <select
+                id="categorySelect"
+                class="w-full appearance-none rounded-xl border border-slate-200 bg-white px-4 py-3 pr-10 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-200"
+              ></select>
+              <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <!-- CTA -->
+            <button id="searchBtn" class="rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700" data-bind="brand.ctaText">
+              Find Listings
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid -->
+    <section class="pb-28 pt-10">
+      <div class="mx-auto max-w-6xl px-4">
+        <div id="cardsGrid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+
+        <!-- Pagination (estática visual) -->
+        <div class="mt-10 flex items-center justify-center">
+          <div class="flex items-center gap-2 rounded-xl bg-white/70 p-2 ring-1 ring-slate-200/70 backdrop-blur">
+            <button class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Anterior</button>
+            <button class="h-9 w-9 rounded-lg bg-blue-50 text-sm font-bold text-blue-700 ring-1 ring-blue-100">1</button>
+            <button class="h-9 w-9 rounded-lg text-sm font-semibold text-slate-600 hover:bg-slate-100">2</button>
+            <button class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Próximo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Render + filtros desde JSON (sin framework) -->
+  <script>
+    const data = JSON.parse(document.getElementById("appData").textContent);
+
+    // bind texto simple
+    document.querySelectorAll("[data-bind]").forEach(el => {
+      const path = el.getAttribute("data-bind");
+      const value = path.split(".").reduce((acc, k) => acc && acc[k], data);
+      if (typeof value === "string") el.textContent = value;
+    });
+
+    // bind placeholders
+    document.querySelectorAll("[data-bind-placeholder]").forEach(el => {
+      const path = el.getAttribute("data-bind-placeholder");
+      const value = path.split(".").reduce((acc, k) => acc && acc[k], data);
+      if (typeof value === "string") el.setAttribute("placeholder", value);
+    });
+
+    // selects
+    const rubroSelect = document.getElementById("rubroSelect");
+    rubroSelect.innerHTML = (data.filters?.rubro?.options || []).map(o =>
+      `<option value="${o.value}">${o.label}</option>`
+    ).join("");
+
+    const categorySelect = document.getElementById("categorySelect");
+    categorySelect.innerHTML = (data.filters?.category?.options || []).map(o =>
+      `<option value="${o.value}">${o.label}</option>`
+    ).join("");
+
+    // template helpers
+    const grid = document.getElementById("cardsGrid");
+
+    const notFoundCover = () => `
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-center text-slate-400">
+          <svg class="mx-auto mb-2" width="54" height="54" viewBox="0 0 24 24" fill="none">
+            <path d="M4 7h16v12H4V7Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M4 15l4-4 3 3 3-3 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8.5 10a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <div class="text-2xl font-extrabold tracking-wide">NOT FOUND</div>
+        </div>
+      </div>
+    `;
+
+    const avatarHTML = (c) => {
+      if (c.avatarType === "image" && c.avatarUrl) {
+        return `<img class="h-full w-full object-cover" src="${c.avatarUrl}" alt="">`;
+      }
+      const letter = (c.avatarLetter || (c.name || "?").slice(0,1)).toUpperCase();
+      return `<div class="flex h-full w-full items-center justify-center text-white font-extrabold">${letter}</div>`;
+    };
+
+    const coverHTML = (c) => {
+      if (c.coverType === "image" && c.coverUrl) {
+        return `
+          <img class="h-full w-full object-cover" src="${c.coverUrl}" alt=""
+               onerror="this.style.display='none'; this.parentElement.classList.add('bg-slate-200');" />
+        `;
+      }
+      return notFoundCover();
+    };
+
+    const cardLink = (c) => {
+      if (c.domain) return `https://${c.domain}`;
+      if (c.slug) return `https://aapp.space/${c.slug}`;
+      return "#";
+    };
+
+    // Render cards
+    const renderCards = (cards) => {
+      grid.innerHTML = (cards || []).map((c) => {
+        const avatarBg = c.avatarBg || "bg-blue-700";
+        const category = c.type || "";
+        return `
+          <article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70">
+            <div class="relative h-44 bg-slate-100">
+              ${coverHTML(c)}
+
+              <div class="absolute left-5 top-[105px] h-14 w-14 overflow-hidden rounded-2xl border-4 border-white ${avatarBg}">
+                ${avatarHTML(c)}
+              </div>
+
+              <div class="absolute right-5 top-[112px]">
+                <span class="inline-flex rounded-full bg-blue-50 px-3 py-1 text-[11px] font-semibold text-blue-700 ring-1 ring-blue-100">
+                  ${category}
+                </span>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-6">
+              <h3 class="text-lg font-semibold text-slate-900">${c.name || ""}</h3>
+              <p class="mt-1 text-sm text-slate-500">${c.subtitle || ""}</p>
+
+              <a href="${cardLink(c)}" target="_blank" rel="noopener"
+                 class="mt-5 inline-flex w-full items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+                Ver perfil
+              </a>
+
+              ${c.domain ? `<p class="mt-3 text-xs text-slate-400">Dominio: <span class="font-semibold text-slate-500">${c.domain}</span></p>` : ``}
+            </div>
+          </article>
+        `;
+      }).join("");
+    };
+
+    // filtros
+    const qInput = document.getElementById("qInput");
+    const searchBtn = document.getElementById("searchBtn");
+
+    const applyFilters = () => {
+      const q = (qInput.value || "").trim().toLowerCase();
+      const rubro = rubroSelect.value;
+      const category = categorySelect.value;
+
+      const filtered = (data.cards || []).filter(c => {
+        const matchesQ = !q
+          || (c.name || "").toLowerCase().includes(q)
+          || (c.subtitle || "").toLowerCase().includes(q)
+          || (c.domain || "").toLowerCase().includes(q);
+
+        const matchesRubro = (rubro === "all") || ((c.rubro || "all") === rubro);
+        const matchesCategory = (category === "all") || ((c.type || "") === category);
+
+        return matchesQ && matchesRubro && matchesCategory;
+      });
+
+      renderCards(filtered);
+    };
+
+    // init
+    renderCards(data.cards || []);
+    applyFilters();
+
+    // events
+    searchBtn.addEventListener("click", applyFilters);
+    qInput.addEventListener("keydown", (e) => { if (e.key === "Enter") applyFilters(); });
+    rubroSelect.addEventListener("change", applyFilters);
+    categorySelect.addEventListener("change", applyFilters);
+  </script>
+</body>
+</html>
